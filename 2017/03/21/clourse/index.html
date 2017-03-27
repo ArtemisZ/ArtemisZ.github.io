@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript 闭包," />
 
 
 
@@ -87,15 +87,25 @@
 
 
 
-<meta name="description" content="学习总结 知识分享 安全">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ArtemisZ 's blog">
-<meta property="og:url" content="https://github.com/ArtemisZ/ArtemisZ.github.io/index.html">
+<meta name="description" content="[TOC]
+零. 前言从我开始接触前端时就听说过闭包，但是一直不理解闭包究竟是什么。上网看了各种博客，大家对闭包的说法不一。闭包在我理解是一种比较抽象的东西。所以我写了一篇博文来方便自己理解闭包。博主是第一次写博文，如果在文章中有什么看不懂或者概念错误的地方，请大家多多见谅和指出错误。
+一. 闭包的定义再说闭包之前，首先让我们先来理解一下自由变量和约束变量。
+在程序设计语言中，变量可以分为自由变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单理解JavaScript的闭包">
+<meta property="og:url" content="https://github.com/ArtemisZ/ArtemisZ.github.io/2017/03/21/clourse/index.html">
 <meta property="og:site_name" content="ArtemisZ 's blog">
-<meta property="og:description" content="学习总结 知识分享 安全">
+<meta property="og:description" content="[TOC]
+零. 前言从我开始接触前端时就听说过闭包，但是一直不理解闭包究竟是什么。上网看了各种博客，大家对闭包的说法不一。闭包在我理解是一种比较抽象的东西。所以我写了一篇博文来方便自己理解闭包。博主是第一次写博文，如果在文章中有什么看不懂或者概念错误的地方，请大家多多见谅和指出错误。
+一. 闭包的定义再说闭包之前，首先让我们先来理解一下自由变量和约束变量。
+在程序设计语言中，变量可以分为自由变量">
+<meta property="og:updated_time" content="2017-03-27T12:20:14.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ArtemisZ 's blog">
-<meta name="twitter:description" content="学习总结 知识分享 安全">
+<meta name="twitter:title" content="简单理解JavaScript的闭包">
+<meta name="twitter:description" content="[TOC]
+零. 前言从我开始接触前端时就听说过闭包，但是一直不理解闭包究竟是什么。上网看了各种博客，大家对闭包的说法不一。闭包在我理解是一种比较抽象的东西。所以我写了一篇博文来方便自己理解闭包。博主是第一次写博文，如果在文章中有什么看不懂或者概念错误的地方，请大家多多见谅和指出错误。
+一. 闭包的定义再说闭包之前，首先让我们先来理解一下自由变量和约束变量。
+在程序设计语言中，变量可以分为自由变量">
 
 
 
@@ -123,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/ArtemisZ/ArtemisZ.github.io/"/>
+  <link rel="canonical" href="https://github.com/ArtemisZ/ArtemisZ.github.io/2017/03/21/clourse/"/>
 
 
 
 
 
-  <title> ArtemisZ 's blog </title>
+  <title> 简单理解JavaScript的闭包 | ArtemisZ 's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -154,9 +164,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,10 +279,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/21/clourse/" itemprop="url">
-                  简单理解JavaScript的闭包
-                </a>
+                简单理解JavaScript的闭包
               
             
           </h1>
@@ -325,9 +330,7 @@
       
 
       
-        
-          
-            <p>[TOC]</p>
+        <p>[TOC]</p>
 <h1 id="零-前言"><a href="#零-前言" class="headerlink" title="零. 前言"></a>零. 前言</h1><p>从我开始接触前端时就听说过闭包，但是一直不理解闭包究竟是什么。上网看了各种博客，大家对闭包的说法不一。闭包在我理解是一种比较抽象的东西。所以我写了一篇博文来方便自己理解闭包。博主是第一次写博文，如果在文章中有什么看不懂或者概念错误的地方，请大家多多见谅和指出错误。</p>
 <h1 id="一-闭包的定义"><a href="#一-闭包的定义" class="headerlink" title="一. 闭包的定义"></a>一. 闭包的定义</h1><p>再说闭包之前，首先让我们先来理解一下自由变量和约束变量。</p>
 <p>在程序设计语言中，变量可以分为<strong>自由变量</strong>与<strong>约束变量</strong>两种。简单来说，一个函数里局部变量和参数都被认为是约束变量；而不是约束变量的则是自由变量。下面我们通过一个demo来解说。 </p>
@@ -367,292 +370,72 @@
 </ol>
 <h1 id="最后，与正文无关"><a href="#最后，与正文无关" class="headerlink" title="最后，与正文无关"></a>最后，与正文无关</h1><p>（听说老师会上网查报告是不是复制粘贴的，本人保证这篇东西绝逼是我写的，还改了好几版。/(ㄒoㄒ)/~~）</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ArtemisZ/ArtemisZ.github.io/2017/03/14/newtest-md/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ArtemisZ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/github头像.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ArtemisZ 's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/newtest-md/" itemprop="url">
-                  newtest.md
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-14T21:56:36+08:00">
-                2017-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/JavaScript-闭包/" rel="tag"># JavaScript 闭包</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <h2 id="记"><a href="#记" class="headerlink" title="记"></a>记</h2><p>这是一次测试</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/ArtemisZ/ArtemisZ.github.io/2017/03/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ArtemisZ">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/github头像.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ArtemisZ 's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/14/newtest-md/" rel="next" title="newtest.md">
+                <i class="fa fa-chevron-left"></i> newtest.md
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/03/14/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-14T21:07:18+08:00">
-                2017-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -660,6 +443,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -679,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/github头像.png"
@@ -733,6 +529,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#零-前言"><span class="nav-number">1.</span> <span class="nav-text">零. 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-闭包的定义"><span class="nav-number">2.</span> <span class="nav-text">一. 闭包的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-闭包的应用"><span class="nav-number">3.</span> <span class="nav-text">二. 闭包的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-模块模式"><span class="nav-number">3.1.</span> <span class="nav-text">1. 模块模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-循环中创建闭包"><span class="nav-number">3.2.</span> <span class="nav-text">2. 循环中创建闭包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-闭包的注意点"><span class="nav-number">4.</span> <span class="nav-text">三. 闭包的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-参考资料"><span class="nav-number">5.</span> <span class="nav-text">四. 参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后，与正文无关"><span class="nav-number">6.</span> <span class="nav-text">最后，与正文无关</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -838,6 +650,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
