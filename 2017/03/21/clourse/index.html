@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -215,7 +215,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -225,7 +225,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -235,7 +235,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -332,7 +332,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-21T21:56:11+08:00">
                 2017-03-21
@@ -485,6 +485,8 @@
           
   <div class="comments" id="comments">
     
+      <div id="uyan_frame"></div>
+    
   </div>
 
 
@@ -508,10 +510,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -532,7 +534,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -543,7 +545,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Kategorien</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -554,7 +556,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -588,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#零-前言"><span class="nav-number">1.</span> <span class="nav-text">零. 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-闭包的定义"><span class="nav-number">2.</span> <span class="nav-text">一. 闭包的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-闭包的应用"><span class="nav-number">3.</span> <span class="nav-text">二. 闭包的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-模块模式"><span class="nav-number">3.1.</span> <span class="nav-text">1. 模块模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-循环中创建闭包"><span class="nav-number">3.2.</span> <span class="nav-text">2. 循环中创建闭包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-闭包的注意点"><span class="nav-number">4.</span> <span class="nav-text">三. 闭包的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-参考资料"><span class="nav-number">5.</span> <span class="nav-text">四. 参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后，与正文无关"><span class="nav-number">6.</span> <span class="nav-text">最后，与正文无关</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#零-前言"><span class="nav-text">零. 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一-闭包的定义"><span class="nav-text">一. 闭包的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-闭包的应用"><span class="nav-text">二. 闭包的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-模块模式"><span class="nav-text">1. 模块模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-循环中创建闭包"><span class="nav-text">2. 循环中创建闭包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-闭包的注意点"><span class="nav-text">三. 闭包的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-参考资料"><span class="nav-text">四. 参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后，与正文无关"><span class="nav-text">最后，与正文无关</span></a></li></ol></div>
             
 
           </div>
@@ -620,7 +622,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -732,6 +734,14 @@
 
 
 
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2135427"></script>
+      <!-- UY END -->
+    
   
 
 
